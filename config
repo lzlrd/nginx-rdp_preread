@@ -5,12 +5,12 @@ if test -n "$ngx_module_link"; then
     ngx_module_name=$ngx_addon_name
     ngx_module_incs=
     ngx_module_deps=
-    ngx_module_srcs="src/ngx_stream_rdp_preread_module.c"
+    ngx_module_srcs="$ngx_addon_dir/src/ngx_stream_rdp_preread_module.c"
     ngx_module_libs=
 
     . auto/module
 else
     STREAM_MODULES="$STREAM_MODULES $ngx_addon_name"
-    NGX_ADDON_SRCS="$NGX_ADDON_SRCS src/ngx_stream_rdp_preread_module.c"
+    NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/src/ngx_stream_rdp_preread_module.c"
     NGX_ADDON_DEPS="$NGX_ADDON_DEPS"
 fi
